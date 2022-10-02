@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementando o ChartJs</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="Style_Chart.JS.CSS">
+</head>
+
+<body>
+    <!--CABEÇA-->
+
+    <header>
+
+        <div class="Logo1"></div>
+        <div>
+            <ul class="texto_logo1">
+                <li class=" li_logo1"> SPTECH </li>
+                <li class=" li_logo1"> Pesquisa e Inovação </li>
+                <li class=" li_logo1"> Professor: Fernando Brandão </li>
+            </ul>
+
+        </div>
+        <div class='container'>
+            <ul class="texto_cabeça">
+                <li class="li_cabeca"><a class="link"
+                        href="https://www.sptech.school/?gclid=CjwKCAjw7eSZBhB8EiwA60kCW4rOA32Up8LwjANuT1ArQVlA3eoyDad5YF5VHQB_BPoEm7_31Mp2GRoC9l8QAvD_BwE">HOME</a>
+                </li>
+                <li class="li_cabeca"><a class="link" href="https://www.sptech.school/processoseletivo.html">Cadastro</a>
+                </li>
+                <li class="li_cabeca"><a class="link" href='https://moodle.sptech.school/login/index.php'>Login</a> </li>
+                <li class="li_cabeca"><a class="link" href=""> Dashbord</a> </li>
+
+            </ul>
+
+        </div>
+
+    </header>
+
+    <!--GRAFICOS-->
+
+    <main>
+
+
+
+
+        <div>
+            <canvas class='Grafico' id="Linha"></canvas>
+        </div>
+
+
+
+        <div>
+            <canvas class='Grafico' id="Barra"></canvas>
+        </div>
+
+
+    </main>
+
+
+
+    <!--RODAPE-->
+    <footer>
+
+       <a href="https://www.sptech.school/?gclid=CjwKCAjw7eSZBhB8EiwA60kCW4rOA32Up8LwjANuT1ArQVlA3eoyDad5YF5VHQB_BPoEm7_31Mp2GRoC9l8QAvD_BwE"><div class="Logo2"></div></a>
+        <div class=" texto-logo2">
+            <ul class="ul_texto2">
+                <li>Filipe Ricardo da Silva</li>
+                <li>Ra:01222058</li>
+
+            </ul>
+        </div>
+        <div class=" texto-logo2">
+            <ul class="ul_texto2">
+                <li>SPTECH - 2022</li>
+               <li> <a href="https://www.sptech.school/graduacaoads.html">Analise e desenvolvimento de Sistemas </a></li>
+            </ul>
+
+        </div>
+
+
+
+    </footer>
+
+</body>
+
+
+<script>
+    const labels = [
+        '12:00',
+        '13:00',
+        '14:00',
+        '15:00',
+        '16:00',
+        '17:00',
+    ];
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Temperatura',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [30, 29, 28, 25, 22, 23],
+        },
+        {
+            labels: labels,
+            label: 'Umidade',
+            backgroundColor: 'rgb(0, 0, 255)',
+            borderColor: 'rgb(0, 0, 255)',
+            data: [80, 82, 80, 85, 80, 83],
+        }]
+    };
+
+    const labels2 = [
+        'Janeiro',
+        'Feveiro',
+        'Março',
+        'Abril',
+        'Maio',
+        'Junho',
+    ];
+
+    const data2 = {
+        labels: labels2,
+        datasets: [{
+            label: 'Temperatura Média',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [22, 24, 27, 25, 23, 20, 18],
+        },
+        {
+            labels: labels2,
+            label: 'Umidade Média',
+            backgroundColor: 'rgb(0, 0, 255)',
+            borderColor: 'rgb(0, 0, 255)',
+            data: [90, 89, 93, 87, 88, 82],
+        }]
+    };
+
+
+
+
+
+
+    const config = {
+        type: 'line',
+        data: data,
+        options: {}
+    };
+
+
+    const config2 = {
+        type: 'bar',
+        data: data2,
+        options: {}
+    };
+</script>
+
+<script>
+    const Linha = new Chart(
+        document.getElementById('Linha'),
+        config
+    );
+
+    const Barra = new Chart(
+        document.getElementById('Barra'),
+        config2
+    );
+</script>
+
+
+</html>
